@@ -17,7 +17,7 @@ struct ObserveOffsetScrollView<Content>: View where Content: View {
     
     var body: some View {
         ScrollView(axes, showsIndicators: showsIndicators) {
-            content()
+            lazyStack(content: content)
                 .background(
                     GeometryReader { proxy in
                         Color.clear
@@ -29,6 +29,20 @@ struct ObserveOffsetScrollView<Content>: View where Content: View {
                 }
         }
         .coordinateSpace(.named(coordinateSpaceName))
+    }
+    
+    @ViewBuilder
+    func lazyStack(content: () -> Content) -> some View {
+        switch axes {
+        case .horizontal:
+            LazyHStack(content: content)
+            
+        case .vertical:
+            LazyVStack(content: content)
+            
+        default:
+            LazyVStack(content: content)
+        }
     }
 }
 
