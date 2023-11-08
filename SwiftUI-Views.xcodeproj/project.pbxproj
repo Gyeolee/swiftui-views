@@ -12,6 +12,9 @@
 		627DE2CD2AF48CCE005CFDE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 627DE2CC2AF48CCE005CFDE3 /* Assets.xcassets */; };
 		627DE2D02AF48CCE005CFDE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 627DE2CF2AF48CCE005CFDE3 /* Preview Assets.xcassets */; };
 		62F5067D2AFB27A500DCF64E /* ObserveOffsetScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5067C2AFB27A500DCF64E /* ObserveOffsetScrollView.swift */; };
+		62F506802AFB49AD00DCF64E /* ViewSizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5067F2AFB49AD00DCF64E /* ViewSizeModifier.swift */; };
+		62F506862AFB4CAE00DCF64E /* ObserveScrollViewOffsetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F506852AFB4CAE00DCF64E /* ObserveScrollViewOffsetView.swift */; };
+		62F506882AFB4D5E00DCF64E /* GetViewSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F506872AFB4D5E00DCF64E /* GetViewSizeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		627DE2CC2AF48CCE005CFDE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		627DE2CF2AF48CCE005CFDE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		62F5067C2AFB27A500DCF64E /* ObserveOffsetScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveOffsetScrollView.swift; sourceTree = "<group>"; };
+		62F5067F2AFB49AD00DCF64E /* ViewSizeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSizeModifier.swift; sourceTree = "<group>"; };
+		62F506852AFB4CAE00DCF64E /* ObserveScrollViewOffsetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveScrollViewOffsetView.swift; sourceTree = "<group>"; };
+		62F506872AFB4D5E00DCF64E /* GetViewSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViewSizeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +59,9 @@
 		627DE2C72AF48CCD005CFDE3 /* SwiftUI-Views */ = {
 			isa = PBXGroup;
 			children = (
+				62F5067E2AFB48F600DCF64E /* ViewModifiers */,
 				62F5067B2AFB277700DCF64E /* Views */,
+				62F506822AFB4C6500DCF64E /* Screens */,
 				627DE2C82AF48CCD005CFDE3 /* SwiftUIViewsApp.swift */,
 				627DE2CA2AF48CCD005CFDE3 /* ContentView.swift */,
 				627DE2CC2AF48CCE005CFDE3 /* Assets.xcassets */,
@@ -76,6 +84,23 @@
 				62F5067C2AFB27A500DCF64E /* ObserveOffsetScrollView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		62F5067E2AFB48F600DCF64E /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				62F5067F2AFB49AD00DCF64E /* ViewSizeModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		62F506822AFB4C6500DCF64E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				62F506852AFB4CAE00DCF64E /* ObserveScrollViewOffsetView.swift */,
+				62F506872AFB4D5E00DCF64E /* GetViewSizeView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +174,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				627DE2CB2AF48CCD005CFDE3 /* ContentView.swift in Sources */,
+				62F506862AFB4CAE00DCF64E /* ObserveScrollViewOffsetView.swift in Sources */,
 				62F5067D2AFB27A500DCF64E /* ObserveOffsetScrollView.swift in Sources */,
+				62F506802AFB49AD00DCF64E /* ViewSizeModifier.swift in Sources */,
 				627DE2C92AF48CCD005CFDE3 /* SwiftUIViewsApp.swift in Sources */,
+				62F506882AFB4D5E00DCF64E /* GetViewSizeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

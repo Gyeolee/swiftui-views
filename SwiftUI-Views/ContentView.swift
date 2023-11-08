@@ -7,27 +7,33 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    private let scrollViewAxes: Axis = .horizontal
-    @State private var scrollViewOffset: CGPoint = .zero
+enum NavigationDestination: CaseIterable {
+    case observeScrollViewOffset
+    case getViewSize
     
-    var body: some View {
-        ObserveOffsetScrollView(axes: .horizontal, offset: $scrollViewOffset) {
-            ForEach(Array(0..<1000), id: \.self) { _ in
-                Rectangle()
-                    .frame(
-                        maxWidth: scrollViewAxes == .horizontal ? nil : .infinity,
-                        maxHeight: scrollViewAxes == .horizontal ? .infinity : nil
-                    )
-                    .frame(
-                        width: scrollViewAxes == .horizontal ? 100 : nil,
-                        height: scrollViewAxes == .vertical ? nil : 100
-                    )
-                    .background(Color(red: .random(in: 0...1), green: .random(in: 0...1), blue: .random(in: 0...1), opacity: 1))
-            }
+    var title: String {
+        switch self {
+        case .observeScrollViewOffset:  return "Observe ScrollView Offset"
+        case .getViewSize:              return "Get View Size"
         }
-        .onChange(of: scrollViewOffset) {
-            print(scrollViewOffset)
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(NavigationDestination.allCases, id: \.self) {
+                    NavigationLink($0.title, value: $0)
+                }
+            }
+            .navigationDestination(for: NavigationDestination.self) {
+                switch $0 {
+                case .observeScrollViewOffset:  ObserveScrollViewOffsetView()
+                case .getViewSize:              GetViewSizeView()
+                }
+            }
+            .navigationTitle("Views & ViewModifiers")
         }
     }
 }
